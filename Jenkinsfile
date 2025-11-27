@@ -19,11 +19,12 @@ sudo cp -r /home/longth1/kolla-ansible/etc/kolla/globals.yml /etc/kolla/
       steps {
         echo '-- Generating OpenStack Services Secrets --'
         sh '''
-#!/bin/bash
+bash -c '
 echo "user= $USER"
 pwd
 source /home/longth1/kolla-ansible/local/bin/activate
 kolla-genpwd -p /etc/kolla/passwords.yml
+'
 '''
       }
     }
@@ -32,8 +33,10 @@ kolla-genpwd -p /etc/kolla/passwords.yml
       steps {
         echo '-- Running Ansible Kolla Prechecks Script --'
         sh '''
-#!/bin/bash
+bash -c '
+source /home/longth1/kolla-ansible/local/bin/activate
 kolla-ansible -i /etc/kolla/all-in-one prechecks
+'
 '''
       }
     }
@@ -42,8 +45,10 @@ kolla-ansible -i /etc/kolla/all-in-one prechecks
       steps {
         echo '-- Running Ansible Kolla Deploy Script --'
         sh '''
-#!/bin/bash
+bash -c '
+source /home/longth1/kolla-ansible/local/bin/activate
 kolla-ansible -i /etc/kolla/all-in-one deploy
+'
 '''
       }
     }
