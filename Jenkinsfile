@@ -42,6 +42,8 @@ source /home/longth1/kolla-ansible/local/bin/activate
 bash -c '
 source /home/longth1/kolla-ansible/local/bin/activate
 sudo cp -r "/home/longth1/kolla-ansible/ansible/inventory/"* /etc/kolla/
+kolla-ansible install-deps
+kolla-ansible -i all-in-one bootstrap-servers
 kolla-ansible -i /etc/kolla/all-in-one prechecks
 '
 '''
@@ -55,6 +57,7 @@ kolla-ansible -i /etc/kolla/all-in-one prechecks
 bash -c '
 source /home/longth1/kolla-ansible/local/bin/activate
 kolla-ansible -i /etc/kolla/all-in-one deploy
+kolla-ansible post-deploy
 '
 '''
       }
