@@ -41,7 +41,7 @@ source /home/longth1/kolla-ansible/local/bin/activate
         sh '''
 bash -c '
 source /home/longth1/kolla-ansible/local/bin/activate
-cp -r "/home/longth1/kolla-ansible/ansible/inventory/"* /etc/kolla/
+sudo cp -r "/home/longth1/kolla-ansible/ansible/inventory/"* /etc/kolla/
 kolla-ansible -i /etc/kolla/all-in-one prechecks
 '
 '''
