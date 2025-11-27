@@ -9,6 +9,7 @@ pipeline {
 #!/bin/bash
 #sudo mkdir -p /etc/kolla
 #sudo chown kolla:kolla /etc/kolla
+git checkout dev_deploy
 sudo cp -r /home/longth1/kolla-ansible/etc/kolla/globals.yml /etc/kolla/
 '''
       }
