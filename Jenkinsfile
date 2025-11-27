@@ -7,8 +7,8 @@ pipeline {
         echo '-- Preparing Infrastructure Files Structure --'
         sh '''
 #!/bin/bash
-sudo mkdir -p /etc/kolla
-sudo chown kolla:kolla /etc/kolla
+#sudo mkdir -p /etc/kolla
+#sudo chown kolla:kolla /etc/kolla
 cp -r /home/longth1/kolla-ansible/etc/kolla/globals.yml /etc/kolla/
 '''
       }
