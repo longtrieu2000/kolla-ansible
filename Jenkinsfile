@@ -23,6 +23,8 @@ bash -c '
 set -x
 whoami
 hostname
+id
+groups
 git checkout dev_deploy
 ls -l /home/longth1/kolla-ansible/local/bin/activate
 cat /home/longth1/kolla-ansible/local/bin/activate | head -n 5
