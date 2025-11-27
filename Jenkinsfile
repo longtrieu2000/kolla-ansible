@@ -20,8 +20,12 @@ sudo cp -r /home/longth1/kolla-ansible/etc/kolla/globals.yml /etc/kolla/
         echo '-- Generating OpenStack Services Secrets --'
         sh '''
 bash -c '
-echo "user= $USER"
-pwd
+set -x
+whoami
+hostname
+git checkout dev_deploy
+ls -l /home/longth1/kolla-ansible/local/bin/activate
+cat /home/longth1/kolla-ansible/local/bin/activate | head -n 5
 source /home/longth1/kolla-ansible/local/bin/activate
 kolla-genpwd -p /etc/kolla/passwords.yml
 '
