@@ -2,7 +2,7 @@ pipeline {
   agent any
   stages {
     stage('Preparing Infrastructure') {
-          steps 
+          steps {
             echo '--Preparing Infrastructure Files Structure --'
             sh ''' #!/bin/bash
                 sudo mkdir -p /etc/kolla
@@ -37,5 +37,5 @@ pipeline {
                 '''
               }
             }
-          }
-        }
+   }
+}
