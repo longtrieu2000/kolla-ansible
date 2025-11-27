@@ -9,7 +9,7 @@ pipeline {
 #!/bin/bash
 #sudo mkdir -p /etc/kolla
 #sudo chown kolla:kolla /etc/kolla
-cp -r /home/longth1/kolla-ansible/etc/kolla/globals.yml /etc/kolla/
+sudo cp -r /home/longth1/kolla-ansible/etc/kolla/globals.yml /etc/kolla/
 '''
       }
     }
