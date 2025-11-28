@@ -58,6 +58,14 @@ bash -c '
 source /home/longth1/kolla-ansible/local/bin/activate
 kolla-ansible -i /etc/kolla/all-in-one deploy
 kolla-ansible post-deploy
+sudo ip addr flush dev ens19
+sudo ip link set ens19 up
+
+sudo ip addr add 172.25.248.171/24 dev br-ex
+sudo ip link set br-ex up
+
+sudo ip route del default 2>/dev/null
+sudo ip route add default via 172.25.248.1 dev br-ex
 '
 '''
       }
